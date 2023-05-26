@@ -1,29 +1,43 @@
-CREATE TABLE CLIENTE(
-IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT,
-NOME VARCHAR(10) NOT NULL,
-SEXO ENUM('M','F') NOT NULL,
-EMAIL VARCHAR(50) UNIQUE,
-CPF VARCHAR(15)
-);
+/* INSERINDO DADOS NO BANCO */
 
-CREATE TABLE ENDERECO(
-IDENDERECO INT PRIMARY KEY AUTO_INCREMENT,
-RUA VARCHAR(10) NOT NULL,
-BAIRRO VARCHAR(10) NOT NULL,
-CIDADE VARCHAR(10) NOT NULL,
-ESTADO CHAR(2) NOT NULL
-);
+INSERT INTO CLIENTE VALUES(NULL,'JOAO','M','JOAOFREIRE@GMAIL.COM', '75545567');
+INSERT INTO CLIENTE VALUES(NULL,'ANALUISA','F','ANALUISA@GMAIL.COM', '49598787');
+INSERT INTO CLIENTE VALUES(NULL,'CLARA','F',NULL, '8977554');
+INSERT INTO CLIENTE VALUES(NULL,'DAN','F',NULL, '5666556');
++-----------+----------+------+----------------------+----------+
+| IDCLIENTE | NOME     | SEXO | EMAIL                | CPF      |
++-----------+----------+------+----------------------+----------+
+|         1 | JOAO     | M    | JOAOFREIRE@GMAIL.COM | 75545567 |
+|         3 | ANALUISA | F    | ANALUISA@GMAIL.COM   | 49598787 |
+|         4 | CLARA    | F    | NULL                 | 8977554  |
+|         5 | DAN      | F    | NULL                 | 5666556  |
++-----------+----------+------+----------------------+----------+
 
-CREATE TABLE TELEFONE( 
-IDTELEFONE INT PRIMARY KEY AUTO_INCREMENT,
-TIPO ENUM('RES', 'COM','CEL') NOT NULL,
-NUMERO VARCHAR(10) NOT NULL
-);
+/* INSERINDO DADOS NA TABELA ENDEREÇO*/
 
- 
-/* Chave estrangeira é a chave primária de uma tabela que vai em outra tabela
- fazer referencia  */
- 
- /* EM RELACIONAMENTO 1X1 A CHAVE ESTRANGEIRA FICA NA TABELA MAIS FRACA
-	EM RELACIONAMENTO 1XN FICARA SEMPRE NA FICARA NA CARDINALIDADE N
- */
+INSERT INTO ENDERECO VALUES(NULL, 'RUA UNIAO','CENTRO','HORIZONTE','MG', 5);
+INSERT INTO ENDERECO VALUES(NULL, 'AV DANTES','JARDIM','HORIZONTE','ES', 3);
+
+mysql> SELECT * FROM ENDERECO;
++------------+-----------+--------+-----------+--------+------------+
+| IDENDERECO | RUA       | BAIRRO | CIDADE    | ESTADO | ID_CLIENTE |
++------------+-----------+--------+-----------+--------+------------+
+|          1 | RUA UNIAO | CENTRO | HORIZONTE | MG     |          5 |
+|          3 | AV DANTES | JARDIM | HORIZONTE | ES     |          3 |
++------------+-----------+--------+-----------+--------+------------+
+
+
+/*INSERINDO DADOS NA TABELA TELEFONE*/
+
+DESC TELEFONE;
+
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '78987854', 5);
+INSERT INTO TELEFONE VALUES (NULL, 'COM', '89885774', 5);
+
++------------+------+----------+------------+
+| IDTELEFONE | TIPO | NUMERO   | ID_CLIENTE |
++------------+------+----------+------------+
+|          1 | CEL  | 78987854 |          5 |
+|          2 | COM  | 89885774 |          5 |
++------------+------+----------+------------+
+
