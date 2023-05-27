@@ -142,5 +142,25 @@ ON C.IDCLIENTE = E.ID_CLIENTE
 INNER JOIN TELEFONE T
 ON C.IDCLIENTE = T.ID_CLIENTE;
 
+* ALTERANDO DADOS DA TABELA */ 
+
+/* Inserindo as informacoes que irao ser alteradas no banco*/
+INSERT INTO CLIENTE VALUES(NULL,'alterar','m','alterar@email.com', '123456789');
+
+/*Confirmando se é mesmo o dado que sejamos alterar */
+
+select * from cliente 
+where idcliente = 8;
+
+/*Alterando o dado */
+
+UPDATE CLIENTE 
+SET EMAIL = 'FELIPE@EMAIL.COM'
+where idcliente = 8;
+
+/* DELETANDO DADOS */
+
+delete from cliente where IDCLIENTE = 8;
+
 
 
