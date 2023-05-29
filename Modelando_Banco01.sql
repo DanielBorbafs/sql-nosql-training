@@ -252,6 +252,25 @@ mysql> desc telefone;
 | ID_CLIENTE | int(11)                 | YES  | MUL | NULL    |                |
 +------------+-------------------------+------+-----+---------+----------------+
 
+
+/*
+2 - PASSO SELECIONAR TODOS OS CAMPOS DAS TABELAS QUE IREMOS UTILIZAR.
+	SELECT C.IDCLIENTE, C.NOME, C.SEXO, C.EMAIL, C.CPF,
+		 E.RUA, E.BAIRRO, E.CIDADE, E.ESTADO, 
+		 T.TIPO, T.NUMERO
+	FROM CLIENTE C
+	INNER JOIN ENDERECO E
+	ON C.IDCLIENTE = E.ID_CLIENTE
+	INNER JOIN TELEFONE T
+	ON C.IDCLIENTE = T.ID_CLIENTE;
+
+--- SERIA UM RELATORIO GERAL -----
+
+*/
+
+
+
+
 /* QUERY 01 -  Relatorio de homens */
 
 
