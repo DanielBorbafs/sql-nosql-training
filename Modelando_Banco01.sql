@@ -212,5 +212,83 @@ INSERT INTO TELEFONE VALUES(NULL,'RES','77755785',20);
 INSERT INTO TELEFONE VALUES(NULL,'COM','44522578',20);
 
 
+-------------- *  QUERYS  * -----------------------
+
+/*
+1 - PASSO PARA EXECUTAR QUALQUER QUERY:
+descrever as tabelas do banco para sabermos onde estamos mexendo.
+desc cliente;
+desc endereco;
+desc telefone;
+*/
+
++------------+-------------------------+------+-----+---------+----------------+
+| Field      | Type                    | Null | Key | Default | Extra          |
++------------+-------------------------+------+-----+---------+----------------+
+| IDTELEFONE | int(11)                 | NO   | PRI | NULL    | auto_increment |
+| TIPO       | enum('RES','COM','CEL') | NO   |     | NULL    |                |
+| NUMERO     | varchar(10)             | NO   |     | NULL    |                |
+| ID_CLIENTE | int(11)                 | YES  | MUL | NULL    |                |
++------------+-------------------------+------+-----+---------+----------------+
+
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| IDENDERECO | int(11)     | NO   | PRI | NULL    | auto_increment |
+| RUA        | varchar(30) | NO   |     | NULL    |                |
+| BAIRRO     | varchar(30) | NO   |     | NULL    |                |
+| CIDADE     | varchar(30) | NO   |     | NULL    |                |
+| ESTADO     | char(2)     | NO   |     | NULL    |                |
+| ID_CLIENTE | int(11)     | YES  | UNI | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+mysql> desc telefone;
++------------+-------------------------+------+-----+---------+----------------+
+| Field      | Type                    | Null | Key | Default | Extra          |
++------------+-------------------------+------+-----+---------+----------------+
+| IDTELEFONE | int(11)                 | NO   | PRI | NULL    | auto_increment |
+| TIPO       | enum('RES','COM','CEL') | NO   |     | NULL    |                |
+| NUMERO     | varchar(10)             | NO   |     | NULL    |                |
+| ID_CLIENTE | int(11)                 | YES  | MUL | NULL    |                |
++------------+-------------------------+------+-----+---------+----------------+
+
+/* QUERY 01 -  Relatorio de homens */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
