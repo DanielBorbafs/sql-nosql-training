@@ -324,6 +324,7 @@ UPDATE CLIENTE SET SEXO = 'F'
 WHERE IDCLIENTE IN(11,12,13,17,18);
 
 /* Relatorio de homens */
+
 SELECT C.IDCLIENTE, C.NOME, C.SEXO, C.EMAIL, C.CPF,
 	 E.RUA, E.BAIRRO, E.CIDADE, E.ESTADO, 
 	 T.TIPO, T.NUMERO
@@ -335,6 +336,62 @@ ON C.IDCLIENTE = T.ID_CLIENTE
 WHERE SEXO = 'M';
 
 
+
+
+/* Relatorio de mulheres */ 
+SELECT C.IDCLIENTE, C.NOME, C.SEXO, C.EMAIL, C.CPF,
+	 E.RUA, E.BAIRRO, E.CIDADE, E.ESTADO, 
+	 T.TIPO, T.NUMERO
+FROM CLIENTE C
+INNER JOIN ENDERECO E
+ON C.IDCLIENTE = E.ID_CLIENTE
+INNER JOIN TELEFONE T
+ON C.IDCLIENTE = T.ID_CLIENTE
+WHERE SEXO = 'F';
+
++-----------+---------+------+-------------------+-----------+--------------------+------------+----------------+--------+------+----------+
+| IDCLIENTE | NOME    | SEXO | EMAIL             | CPF       | RUA                | BAIRRO     | CIDADE         | ESTADO | TIPO | NUMERO   |
++-----------+---------+------+-------------------+-----------+--------------------+------------+----------------+--------+------+----------+
+|         3 | ANA     | F    | ANA@IG.COM        | 456545678 | RUA PRES VARGAS    | JARDINS    | SAO PAULO      | SP     | CEL  | 78989765 |
+|         3 | ANA     | F    | ANA@IG.COM        | 456545678 | RUA PRES VARGAS    | JARDINS    | SAO PAULO      | SP     | CEL  | 99766676 |
+|        11 | KARLA   | F    | KARLA@GMAIL.COM   | 545676778 | RUA VISCONDESSA    | CENTRO     | RIO DE JANEIRO | RJ     | CEL  | 33567765 |
+|        11 | KARLA   | F    | KARLA@GMAIL.COM   | 545676778 | RUA VISCONDESSA    | CENTRO     | RIO DE JANEIRO | RJ     | CEL  | 88668786 |
+|        11 | KARLA   | F    | KARLA@GMAIL.COM   | 545676778 | RUA VISCONDESSA    | CENTRO     | RIO DE JANEIRO | RJ     | COM  | 55689654 |
+|        12 | DANIELE | F    | DANIELE@GMAIL.COM | 43536789  | RUA NELSON MANDELA | COPACABANA | RIO DE JANEIRO | RJ     | COM  | 88687979 |
+|        13 | LORENA  | F    | NULL              | 774557887 | RUA ARAUJO LIMA    | CENTRO     | VITORIA        | ES     | COM  | 88965676 |
+|        15 | ANTONIO | F    | ANTONIO@IG.COM    | 12436767  | AV CAPITAO ANTUNES | CENTRO     | CURITIBA       | PR     | CEL  | 89966809 |
+|        17 | ELAINE  | F    | ELAINE@GLOBO.COM  | 32567763  | ALAMEDA SAMPAIO    | BOM RETIRO | CURITIBA       | PR     | CEL  | 99655768 |
+|        18 | CARMEM  | F    | CARMEM@IG.COM     | 787832213 | RUA DA LAPA        | LAPA       | SAO PAULO      | SP     | RES  | 89955665 |
+|        19 | ADRIANA | F    | ADRIANA@GMAIL.COM | 88556942  | RUA GERONIMO       | CENTRO     | RIO DE JANEIRO | RJ     | RES  | 77455786 |
+|        19 | ADRIANA | F    | ADRIANA@GMAIL.COM | 88556942  | RUA GERONIMO       | CENTRO     | RIO DE JANEIRO | RJ     | RES  | 89766554 |
+|        20 | JOICE   | F    | JOICE@GMAIL.COM   | 55412256  | RUA GOMES FREIRE   | CENTRO     | RIO DE JANEIRO | RJ     | RES  | 77755785 |
+|        20 | JOICE   | F    | JOICE@GMAIL.COM   | 55412256  | RUA GOMES FREIRE   | CENTRO     | RIO DE JANEIRO | RJ     | COM  | 44522578 |
++-----------+---------+------+-------------------+-----------+--------------------+------------+----------------+--------+------+----------+
+
+/* 
+iD = 15,
+esta errado, vamos atualizar
+*/
+UPDATE CLIENTE SET SEXO = 'M'
+WHERE IDCLIENTE = 15;
+
+/* Relatorio de mulheres */ 
+SELECT C.IDCLIENTE, C.NOME, C.SEXO, C.EMAIL, C.CPF,
+	 E.RUA, E.BAIRRO, E.CIDADE, E.ESTADO, 
+	 T.TIPO, T.NUMERO
+FROM CLIENTE C
+INNER JOIN ENDERECO E
+ON C.IDCLIENTE = E.ID_CLIENTE
+INNER JOIN TELEFONE T
+ON C.IDCLIENTE = T.ID_CLIENTE
+WHERE SEXO = 'F';
+
+
+/* QUANTIDADE DE HOMENS E MULHERES  */
+
+SELECT COUNT(*) AS QUANTIDADE, SEXO
+FROM CLIENTE
+GROUP BY SEXO;
 
 
 
