@@ -509,6 +509,19 @@ ON C.IDCLIENTE = T.ID_CLIENTE
 INNER JOIN ENDERECO E
 ON C.IDCLIENTE = E.ID_CLIENTE;
 
+/* UPDATE, INSERT E DELETE - DML EM VIEWS
+
+Não se pode fazer delete nem insert em views com join,
+porém update é permitido mas tambem altera na tabela raiz.
+
+*/
+
+INSERT INTO V_RELATORIO VALUES(
+'ANDREIA','F','ANDREIA@UOL.COM.BR','8733545','CEL','CENTRO','VITORIA','ES'
+);
+ERROR 1394 (HY000): Can not insert into join view 'comercio.v_relatorio' without fields list
+
+
 
 
 
