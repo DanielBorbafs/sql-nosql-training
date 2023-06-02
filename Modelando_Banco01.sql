@@ -544,6 +544,45 @@ ORDER BY 1;
 
 
 
+/*
+ Delimiter
+  Caso for necessário trocar o delimitador ; por outro símbolo para executarmos alguns comandos.
+ */
+
+ DELIMITER $
+
+ /*
+ PROCEDURE
+	
+	*procedure é uma sequência de instruções pré-definidas em um banco de dados
+	*que pode ser chamada e executada para realizar uma operação específica. 
+	*Ela ajuda a automatizar tarefas e simplificar o gerenciamento dos dados.
+
+ */
+
+ DELIMITER $
+
+CREATE PROCEDURE CONTA()
+BEGIN
+	SELECT 10 + 10 AS CONTA;
+
+END
+$
+
+CALL CONTA()$ /*Chamando a procedure*/
+
+drop procedure conta()$
+/* --------------------------------------- */
+
+
+CREATE PROCEDURE CONTA(NUMERO1 INT, NUMERO2 INT)
+BEGIN
+	SELECT NUMERO1 + NUMERO2 AS CONTA;
+
+END 
+$
+
+CALL CONTA(100,50)$
 
 
 
