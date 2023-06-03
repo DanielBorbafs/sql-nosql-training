@@ -635,7 +635,94 @@ CALL CONS_CURSOS(2);
 
 SHOW PROCEDURE STATUS;
 
+CREATE TABLE VENDEDORES(
+	IDVENDEDOR INT PRIMARY KEY AUTO_INCREMENT,
+	NOME VARCHAR(30),
+	SEXO CHAR(1),
+	JANEIRO FLOAT(10,2),
+	FEVEREIRO FLOAT(10,2),
+	MARCO FLOAT(10,2)
+);
 
+
+INSERT INTO VENDEDORES VALUES (NULL, 'CARLOS', 'M', 76234.87, 88346.87, 7753.90);
+INSERT INTO VENDEDORES VALUES (NULL, 'LUARA', 'F', 8575.4, 12325.10, 2561.63);
+INSERT INTO VENDEDORES VALUES (NULL, 'MARIA', 'F', 98752.22, 8346.87, 2753.90);
+INSERT INTO VENDEDORES VALUES (NULL, 'JOAO', 'F', 6234.87, 5521.22, 90456.90);
+INSERT INTO VENDEDORES VALUES (NULL, 'JULIA', 'F', 234.87, 521.22, 7456.90);
+INSERT INTO VENDEDORES VALUES (NULL, 'CARLOS', 'M', 734.87, 8846.87, 10753.90);
+
+
+/* MAX - TRAZ O VALOR MAXIMO DE UMA COLUNA */
+
+SELECT * FROM VENDEDORES;
++------------+--------+------+----------+-----------+----------+
+| IDVENDEDOR | NOME   | SEXO | JANEIRO  | FEVEREIRO | MARCO    |
++------------+--------+------+----------+-----------+----------+
+|          1 | CARLOS | M    | 76234.87 |  88346.87 |  7753.90 |
+|          2 | LUARA  | F    |  8575.40 |  12325.10 |  2561.63 |
+|          3 | MARIA  | F    | 98752.22 |   8346.87 |  2753.90 |
+|          4 | JOAO   | F    |  6234.87 |   5521.22 | 90456.90 |
+|          5 | JULIA  | F    |   234.87 |    521.22 |  7456.90 |
+|          6 | CARLOS | M    |   734.87 |   8846.87 | 10753.90 |
++------------+--------+------+----------+-----------+----------+
+6 rows in set (0.00 sec)
+
+SELECT MAX(FEVEREIRO) AS MAIOR_FEV FROM VENDEDORES;
++-----------+
+| MAIOR_FEV |
++-----------+
+|  88346.87 |
++-----------+
+
+/* MIN - TRAZ O VALOR MINIMO DE UMA COLUNA */ 
+
+ SELECT MIN(FEVEREIRO) AS MAIOR_FEV FROM VENDEDORES;
++-----------+
+| MAIOR_FEV |
++-----------+
+|    521.22 |
++-----------+
+
+/* AVG - TRAZ O VALOR MEDIO DE UMA COLUNA */ 
+
+SELECT AVG(FEVEREIRO) AS MEDIA_FEV FROM VENDEDORES;
+
++--------------+
+| MEDIA_FEV    |
++--------------+
+| 20651.357869 |
++--------------+
+
+ /* VARIAS FUNCOES */
+
+ SELECT MAX(JANEIRO) AS MAX_JAN,
+    ->          MIN(JANEIRO) AS MIN_JAN,
+    ->          AVG(JANEIRO) AS MEDIA_JAN /* MUITAS CASAS APÓS A VIRGULA */
+    ->                  FROM VENDEDORES;
++----------+---------+--------------+
+| MAX_JAN  | MIN_JAN | MEDIA_JAN    |
++----------+---------+--------------+
+| 98752.22 |  234.87 | 31794.516073 |
++----------+---------+--------------+
+
+/* TRUNCATE */ 
+ SELECT MAX(JANEIRO) AS MAX_JAN,
+       MIN(JANEIRO) AS MIN_JAN,
+       TRUNCATE(AVG(JANEIRO), 2) AS MEDIA_JAN
+FROM VENDEDORES;
+
+
+/* SUM - SOMA OS VALORES DA COLUNA */ 
+
+SELECT SUM(JANEIRO) AS TOTAL_JAN
+FROM VENDEDORES;
+
+/* VENDAS POR SEXO */
+
+SELECT SEXO, SUM(MARCO) AS TOTAL_MARCO
+FROM VENDEDORES
+GROUP BY SEXO;
 
 
 
