@@ -41,3 +41,7 @@ insert into cursos values(null,'Curso SQL');
 
 select * from alunos
 inner join cursos on alunos.id_aluno = cursos.id_curso;
+
+select alunos.nome_aluno as aluno, cursos.nome as curso
+from alunos
+inner join cursos on alunos.id_aluno = cursos.id_curso;
