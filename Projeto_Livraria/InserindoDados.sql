@@ -45,7 +45,8 @@ join livros l on v.livro_id= l.livro_id
 join endereco e on v.client_id = c.client_id;
 
 /* Essa query mostra dados de uma venda, a mesma puxa informações
-referente a venda, fica assim: */
+referente a venda, fica assim:
+*/
 +---------+----------+-------+----------+--------+
 | idvenda | cliente  | valor | livro    | estado |
 +---------+----------+-------+----------+--------+
