@@ -2,6 +2,7 @@
 OBS: script ainda está cru, faltando algumas tratativas nas entradas de dados,
 Irei primeiro botar o sistema para funcionar para logo após poder lapidar
 os dados para poder se encaixar nas regras de negócios.
+
 */
 create table livros(
     livro_id int primary key,
