@@ -16,5 +16,5 @@ insert into clientes values(1, 'Marcello', 'M', 23);
 insert into endereco values(1, 'ES', 'vitoria', 'São Domingos', '589', 'lima pacheco','proximo ao banco brasil');
 
 /* 5- armazenando uma compra feita pelo cliente*/
-INSERT INTO vendas VALUES (1, 1, 1, '2023-06-11', 30.50);
+insert into vendas values (1, 1, 1, '2023-06-11', 30.50);
 
