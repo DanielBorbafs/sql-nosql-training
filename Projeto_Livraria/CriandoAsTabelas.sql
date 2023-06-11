@@ -25,3 +25,9 @@ create table vendas (
 );
 
 
+CREATE TABLE estoque_geral (
+    livro_id INT,
+    quantidade INT,
+    FOREIGN KEY (livro_id) REFERENCES livros(livro_id)
+);
+
