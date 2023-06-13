@@ -40,3 +40,18 @@ GROUP BY faixa_etaria;
 | 20-25 anos   |              2 |
 | 14-16 anos   |              1 |
 +--------------+----------------+
+/* Ja aqui mostra qual id do cliente que está armazenado na faixa etária descrita*/
+
+SELECT
+  CASE
+    WHEN idade BETWEEN 14 AND 16 THEN '14-16 anos'
+    WHEN idade BETWEEN 17 AND 19 THEN '17-19 anos'
+    WHEN idade BETWEEN 20 AND 25 THEN '20-25 anos'
+    ELSE 'Outras idades'
+  END AS faixa_etaria,
+  GROUP_CONCAT(client_id ORDER BY client_id) AS ids_clientes
+FROM clientes
+GROUP BY faixa_etaria;
+
+
+
