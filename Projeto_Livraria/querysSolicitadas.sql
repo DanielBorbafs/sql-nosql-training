@@ -19,3 +19,24 @@ JOIN clientes c ON v.client_id = c.client_id
 GROUP BY c.nome
 ORDER BY valor_total DESC;
 
+/*
+QUERY 02 
+ Agrupa os clientes por faixa etária de idade,
+ mostra a faixa etária e quantos clientes estão armazenados naquela faixa.
+*/
+SELECT
+  CASE
+    WHEN idade BETWEEN 14 AND 16 THEN '14-16 anos'
+    WHEN idade BETWEEN 17 AND 19 THEN '17-19 anos'
+    WHEN idade BETWEEN 20 AND 25 THEN '20-25 anos'
+    ELSE 'Outras idades'
+  END AS faixa_etaria,
+  COUNT(*) AS total_clientes
+FROM clientes
+GROUP BY faixa_etaria;
++--------------+----------------+
+| faixa_etaria | total_clientes |
++--------------+----------------+
+| 20-25 anos   |              2 |
+| 14-16 anos   |              1 |
++--------------+----------------+
