@@ -72,5 +72,10 @@ SELECT MONTH(data) AS mes, SUM(valor) AS total_vendas
 FROM vendas
 GROUP BY mes;
 
+/* aqui ordena para o mês que mais vendeu aparecer no topo */ 
+SELECT MONTH(data) AS mes, SUM(valor) AS total_vendas
+FROM vendas
+GROUP BY mes;
+
 
 
