@@ -65,6 +65,12 @@ Mostra a quantidade TOTAL de clientes do sexo masculino e feminino */
 select sexo, count(*) as total
 from clientes
 group by sexo;
+ 
+ /* Query 05 
+ Mostra o valor total de vendas ao lado do mês respectivo */
+SELECT MONTH(data) AS mes, SUM(valor) AS total_vendas
+FROM vendas
+GROUP BY mes;
 
 
 
