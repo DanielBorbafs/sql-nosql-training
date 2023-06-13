@@ -11,3 +11,11 @@ JOIN clientes c ON v.client_id = c.client_id
 GROUP BY c.client_id, c.nome
 ORDER BY valor_total DESC;
 
+/* Caso não queira que apareça o ID do cliente : */
+
+SELECT c.nome AS cliente, COUNT(*) AS total_compras, SUM(v.valor) AS valor_total
+FROM vendas v
+JOIN clientes c ON v.client_id = c.client_id
+GROUP BY c.nome
+ORDER BY valor_total DESC;
+
