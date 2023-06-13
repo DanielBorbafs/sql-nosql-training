@@ -60,5 +60,11 @@ select estado, count(*) as total_clientes
 from endereco
 group by estado;
 
+/* Query 04
+Mostra a quantidade TOTAL de clientes do sexo masculino e feminino */ 
+select sexo, count(*) as total
+from clientes
+group by sexo;
+
 
 
