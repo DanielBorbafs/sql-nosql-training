@@ -53,5 +53,12 @@ SELECT
 FROM clientes
 GROUP BY faixa_etaria;
 
+/* QUERY 03
+mostra a quantidade de clientes que residem em cada estado.
+*/
+select estado, count(*) as total_clientes 
+from endereco
+group by estado;
+
 
 
