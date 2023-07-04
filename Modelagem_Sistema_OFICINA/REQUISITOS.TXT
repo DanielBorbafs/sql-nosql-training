@@ -1,7 +1,0 @@
-/* 
-# Cada cliente possui apenas um carro;
-# Um carro possui uma marca;
-# Deve se apresentar as cores do carro;
-# Um carro pode ter mais de uma cor;
-# Os telefones dos clientes podem ser armazenados, mas náo sao obrigatorios;
-*/
