@@ -1,1 +1,0 @@
-* colar alguns comandos uteis*
