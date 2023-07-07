@@ -1,21 +1,20 @@
-create database cinehub;
-
-use cinehub;
-
-create table Filmes (
-id int primary key,
-nome_filme varchar(30),
-data_lancamento date,
-avaliacao float(2),
-diretor_filme varchar(30),
-genero_filme varchar(15)
+CREATE TABLE Filmes (
+  idFilme INT PRIMARY KEY,
+  nomeFilme VARCHAR(30),
+  dataLancamento DATE,
+  avaliacao FLOAT(2),
+  idDiretor INT,
+  FOREIGN KEY (idDiretor) REFERENCES Diretores(idDiretor)
 );
 
-create table diretores (
-id int primary key,
-nome varchar(100)
+CREATE TABLE Diretores (
+  idDiretor INT PRIMARY KEY,
+  nomeDiretor VARCHAR(100)
 );
 
-ALTER TABLE Filmes
-ADD COLUMN diretor_id INT,
-ADD CONSTRAINT FK_diretor_filme FOREIGN KEY (diretor_id) REFERENCES diretores(id);
+-- Inserindo um diretor
+INSERT INTO Diretores (idDiretor, nomeDiretor) VALUES (1, 'John Lourence');
+
+-- Inserindo um filme e relacionando-o ao diretor
+INSERT INTO Filmes (idFilme, nomeFilme, dataLancamento, avaliacao, idDiretor)
+VALUES (1, 'Filme A', '2022-01-01', 4.5, 1);
