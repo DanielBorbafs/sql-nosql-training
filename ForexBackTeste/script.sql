@@ -8,3 +8,4 @@ CREATE TABLE CONTAGEM (
   loss int,
   data int not null
 );
+APAGAR
