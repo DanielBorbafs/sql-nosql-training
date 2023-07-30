@@ -31,3 +31,4 @@ where not valor <= 1000;
 select nomeInvestimento, valor
 from financas
 order by valor asc;
+UPGRADE
