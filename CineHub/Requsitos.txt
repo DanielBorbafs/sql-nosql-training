@@ -1,8 +1,0 @@
-
-O Banco deve armazenar os seguintes dados: 
-
-Nome do filme;
-Data de lancamento;
-Avaliacao;
-Autor do filme;
-Gênero;
