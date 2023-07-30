@@ -1,5 +1,8 @@
+create database gamerstore
+	
 use gamerstore
 go
+	
 /* criando a tabela cliente */
 create table cliente (
 	idCliente INT PRIMARY KEY IDENTITY,
@@ -11,7 +14,9 @@ create table cliente (
 	estado char(2)
 )
 go
-/* constraint */ 
+/* constraint
+- validando os dados
+*/ 
 ALTER TABLE cliente
 ADD CONSTRAINT CK_SEXO CHECK(SEXO IN ('M','F'))
 GO
@@ -40,13 +45,14 @@ ADD CONSTRAINT FK_vendas_cliente
 FOREIGN KEY (idCliente)
 REFERENCES cliente (idCliente)
 GO
+	
 ALTER TABLE ESTOQUE
 ADD CONSTRAINT FK_PRODUTO_ESTOQUE
 FOREIGN KEY (IDPRODUTO)
 REFERENCES ESTOQUE(IDPRODUTO)
 GO
 
-/* CRIANDO TRIGGER
+/* CRIANDO TRIGGER (INICIAL)
 - TODA VEZ QUE UMA VENDA FOR EXECUTADA DIMINUI A QUANTIDADE DE PRODUTO NO ESTOQUE
 */
 
