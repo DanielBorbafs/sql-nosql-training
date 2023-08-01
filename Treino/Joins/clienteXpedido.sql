@@ -1,3 +1,37 @@
+CREATE DATABASE ESTUDO
+GO
+USE ESTUDO 
+
+CREATE TABLE GAMER(
+	IDGAMER INT PRIMARY KEY IDENTITY,
+	NOME VARCHAR(30),
+	IDADE VARCHAR(3),
+	JOGOPREFERIDO INT,
+)
+GO
+
+CREATE TABLE JOGO( 
+	IDJOGO INT PRIMARY KEY IDENTITY,
+	NOMEJOGO VARCHAR(30),
+)
+GO
+
+ALTER TABLE GAMER 
+ADD CONSTRAINT FK_JOGO_PREFERIDO
+FOREIGN KEY(JOGOPREFERIDO)
+REFERENCES JOGO(IDJOGO)
+GO
+
+INSERT INTO JOGO VALUES ('GOD OF WAR')
+GO
+
+INSERT INTO GAMER VALUES ('DANIEL', '23', 1)
+GO
+
+SELECT GAMER.NOME, GAMER.IDADE, JOGO.NOMEJOGO
+FROM GAMER
+INNER JOIN JOGO ON  GAMER.JOGOPREFERIDO= JOGO.IDJOGO
+GO
 
 -- Criando as tabelas ---
 CREATE TABLE CLIENTES (
@@ -62,3 +96,12 @@ from clientes
 inner join pedidos on pedidos.idcliente = clientes.idcliente
 group by clientes.nome
 go
+
+--  Escreva uma consulta que retorne todos os pedidos e, se houver, o nome do cliente que fez cada pedido.
+
+select pedidos.produto,pedidos.valor, clientes.nome
+from PEDIDOS
+inner join clientes on clientes.idCliente = pedidos.idpedido
+order by clientes.nome asc
+go
+
