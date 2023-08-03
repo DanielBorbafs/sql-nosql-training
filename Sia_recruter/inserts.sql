@@ -37,3 +37,33 @@ EXEC SP_CADASTRAR_FUNCIONARIO
     @NumeroTelefone = '(28) 3285-7895',
     @TipoTelefone = 'RES';
 GO
+
+EXEC SP_CADASTRAR_FUNCIONARIO
+    @Nome = 'Camila Santos',
+    @Idade = 26,
+    @Email = 'camila.santos@email.com',
+    @DataAdm = '2024-03-18',
+    @NomeCargo = 'Analista de Recursos Humanos',
+    @Salario = 3800.00,
+    @Estado = 'PR',
+    @Bairro = 'Centro Cívico',
+    @Rua = 'Avenida das Oliveiras',
+    @Numero = '564',
+    @NumeroTelefone = '(41) 9876-5678',
+    @TipoTelefone = 'RES';
+GO
+EXEC SP_CADASTRAR_FUNCIONARIO
+    @Nome = 'Rafael Martins',
+    @Idade = 32,
+    @Email = 'rafael.martins@email.com',
+    @DataAdm = '2022-09-05',
+    @NomeCargo = 'Gerente de Vendas',
+    @Salario = 5000.00,
+    @Estado = 'RS',
+    @Bairro = 'Centro Histórico',
+    @Rua = 'Rua das Flores',
+    @Numero = '789',
+    @NumeroTelefone = '(51) 4567-2345',
+    @TipoTelefone = 'CEL';
+GO
+
