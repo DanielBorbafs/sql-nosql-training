@@ -23,3 +23,17 @@ EXEC SP_CADASTRAR_FUNCIONARIO
     @NumeroTelefone = '(11) 98765-4321',
     @TipoTelefone = 'RES';
 GO
+EXEC SP_CADASTRAR_FUNCIONARIO
+    @Nome = 'Daniel Borba',
+    @Idade = 23,
+    @Email = 'contato.danielborba@email.com',
+    @DataAdm = '2024-08-03',
+    @NomeCargo = 'Desenvolvedor Backend',
+    @Salario = 3500.00,
+    @Estado = 'ES',
+    @Bairro = 'Belvedere',
+    @Rua = 'Osorio duque estrada',
+    @Numero = '10',
+    @NumeroTelefone = '(28) 3285-7895',
+    @TipoTelefone = 'RES';
+GO
