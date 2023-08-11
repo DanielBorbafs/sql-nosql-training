@@ -14,7 +14,5 @@ go
 INSERT INTO vendas (quantidadeProduto, valorTotal, idCliente, idProduto)
 VALUES (1, 1200, 1,1)
 go
-
 select * from vendas 
-
 select * from estoque
