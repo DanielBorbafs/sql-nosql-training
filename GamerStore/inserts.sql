@@ -4,7 +4,6 @@ insert into cliente values ( 'Daniel', 'contatodaniel@ig.com', '27998788','23', 
 go
 insert into cliente values ( 'Caua','caua123@gmail.com', '9987887', '18', 'M', 'ES')
 go
-
 -- PRODUTOS 
 insert into estoque values ('GOW Ragnarok', 149.90, 30)
 go
