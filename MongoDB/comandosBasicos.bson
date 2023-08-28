@@ -4,3 +4,6 @@ show dbs => mostra os bancos  OBS: vai mostrar apenasa os bancos que contém con
 db => mostra qual banco está conectado atualmente
 db.products.insertOne({_id: 1, name: "pen", price: 1.20}) => insere dados na colecao products
 show collections => mostra as colecoes disponiveis no banco atual.
+db.products.find() => mostra os dados da colecao
+db.products.find({name: "Pencil"}) => select com um requisito especifico.
+db.products.find({price:{$gt:1}}) => traz os dados onde o preco é maior que 1
