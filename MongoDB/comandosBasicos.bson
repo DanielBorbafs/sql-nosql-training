@@ -7,3 +7,4 @@ show collections => mostra as colecoes disponiveis no banco atual.
 db.products.find() => mostra os dados da colecao
 db.products.find({name: "Pencil"}) => select com um requisito especifico.
 db.products.find({price:{$gt:1}}) => traz os dados onde o preco é maior que 1
+db.products.find({_id:1}, {name:1}) => usando projecao para mostrar apenas os campos que queremos
