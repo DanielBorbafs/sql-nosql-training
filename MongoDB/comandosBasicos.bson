@@ -2,3 +2,5 @@
 use shopDB => cria o banco
 show dbs => mostra os bancos  OBS: vai mostrar apenasa os bancos que contém conteúdos
 db => mostra qual banco está conectado atualmente
+db.products.insertOne({_id: 1, name: "pen", price: 1.20}) => insere dados na colecao products
+show collections => mostra as colecoes disponiveis no banco atual.
