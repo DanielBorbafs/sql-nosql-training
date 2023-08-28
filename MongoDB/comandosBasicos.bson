@@ -1,1 +1,4 @@
 
+use shopDB => cria o banco
+show dbs => mostra os bancos  OBS: vai mostrar apenasa os bancos que contém conteúdos
+db => mostra qual banco está conectado atualmente
