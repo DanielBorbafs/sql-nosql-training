@@ -16,3 +16,24 @@ db.products.updateOne{_id:1}, {$set: {stock:32}}) => faz o update e adiciona uma
 
 ** delete
 db.products.deleteOne({_id: 2})
+
+Relacionamentos
+
+CENÁRIO: 
+{ 
+  _id:1,
+  name: "Pen",
+  price: 1.20,
+  stock: 32
+}
+{
+  _id: 2,
+  name: "Pencil",
+  price: 0.80,
+  stock: 12
+}
+
+{
+  orderNumber: 321,
+  productsOrdered: [1,2]
+}
