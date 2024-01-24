@@ -1,0 +1,37 @@
+
+/* PROCESSOS DE MODELAGEM 
+entidade = tabela
+campos = atributos
+MODELAGEM CONCEITUAL - RASCUNHO;
+MODELAGEM LÓGICA - QUALQUER PROGRAMA DE MODELAGEM ( criando os diagramas visuais das tabelaS);
+MODELAGEM FÍSICA - SCRIPTS DE BANCO;
+*/ 
+
+
+/*
+Uma empresa necessita de cadastros de clientes para mandar mala direta
+Dados do clientes que precisam de armazenados:
+. NOME - CARACTER(30);
+. CPF - NUMERICO(char) (11);
+. EMAIL - CARACTER(30);
+. TELEFONE - CARACTER(30);
+. ENDERECO - CARACTER(100);
+. SEXO;
+*/ 
+
+/* MODELAGEM FÍSICA */
+CREATE DATABASE UNIDADOS;
+USE UNIDADOS;
+
+/* CRIANDO A TABELA */
+CREATE TABLE CLIENTE(
+	NOME VARCHAR(30),
+	SEXO CHAR(1),
+	EMAIL VARCHAR(30),
+	CPF VARCHAR(11),
+	TELEFONE VARCHAR(30),
+	ENDERECO VARCHAR(100)
+);
+
+/* DESCOBRINDO ESTRUTURA DA TABELA*/
+DESC CLIENTE
