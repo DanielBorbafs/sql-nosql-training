@@ -53,3 +53,33 @@ INSERT INTO CLIENTE VALUES('DANIEL', 'M', 'DEV.DANIELBORBA@GMAIL.COM','123456789
 
 /* MOSTRANDO DADOS DA TABELA */
 SELECT * FROM CLIENTE;
+
+/* 
+PERFORMANCE COM OPERADORES LÓGICOS:
+CONTANDO REGISTROS DE UMA TABELA COM COUNT(*)
+*/
+
+SELECT COUNT(*) AS "NUMERO DE CLIENTES"
+FROM CLIENTE; 
+
+/* GROUP BY*/
+SELECT SEXO, COUNT(*) as "Quantidade"
+FROM CLIENTE
+GROUP BY SEXO;
+# faz a contagem de M e F e agrupa por sexo
+
+
+/* PERFORMANCE COM OPERADORES LÓGICOS */
+
+# Utilizando OR deve-se vim primeiro na query o campo com mais probabilidade de ser verdadeiro
+SELECT NOME, SEXO, ENDERECO
+FROM CLIENTE
+WHERE SEXO = "F"
+OR CIDADE = "RIO DE JANEIRO";
+
+
+# Utilizando And, é obrigatorio a checagem dos dois campos, começamos com a menor possibilidade de ser verdadeiro
+SELECT NOME, SEXO, ENDERECO
+FROM CLIENTE
+WHERE CIDADE = "RIO DE JANEIRO"
+AND SEXO = "F";
