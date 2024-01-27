@@ -9,5 +9,5 @@ Bem-vindo ao repositório de Modelagem de Banco de Dados! Aqui você encontrará
 <li>Triggers</li>
 <li>Procedures</li>
 <li>Inserts</li>
-<li>Fluxograma</li>
+
 </ul>
