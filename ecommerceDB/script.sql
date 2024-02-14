@@ -31,9 +31,11 @@ fk_produto_id INT,
 data_pedido DATE, 
 quantidade_comprada INT,
 tipo_pagamento VARCHAR(45),
-status ENUM('pendente', 'processaando', 'enviado', 'entregue'),
+status ENUM('pendente', 'procesSando', 'enviado', 'entregue'),
 FOREIGN KEY (fk_cliente_id) REFERENCES cliente(id_cliente),
 FOREIGN KEY (fk_produto_id) REFERENCES produto(id_produto)
 );
+
+DROP TABLE PEDIDO;
 
 
