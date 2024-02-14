@@ -1,3 +1,5 @@
+
+/* CRIANDO O BANCO */
 CREATE DATABASE ECOMMERCE;
 
 USE ECOMMERCE;
@@ -5,7 +7,7 @@ USE ECOMMERCE;
 CREATE TABLE cliente(
 id_cliente INT PRIMARY KEY auto_increment NOT NULL,
 nome VARCHAR(60),
-email VARCHAR(100),
+email VARCHAR(100) UNIQUE,
 telefone VARCHAR(20),
 rua VARCHAR(60),
 uf 	CHAR(2),
@@ -29,8 +31,9 @@ fk_produto_id INT,
 data_pedido DATE, 
 quantidade_comprada INT,
 tipo_pagamento VARCHAR(45),
-status VARCHAR(30),
+status ENUM('pendente', 'processaando', 'enviado', 'entregue'),
 FOREIGN KEY (fk_cliente_id) REFERENCES cliente(id_cliente),
 FOREIGN KEY (fk_produto_id) REFERENCES produto(id_produto)
 );
+
 
