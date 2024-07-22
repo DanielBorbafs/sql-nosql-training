@@ -1,3 +1,5 @@
+// clientes de santa catarina
+
 SELECT 
     C.CLIENTE_NOME,
     C.SEXO,
