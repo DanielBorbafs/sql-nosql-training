@@ -31,7 +31,7 @@ N	113 - NÃO INFORMADO
 F	455 - FEMININO
 M	432 - MASCULINO
 */
-
+---------------------------------------------------------------------------------------
 /* 
  Preciso que traga um valor simulado caso houvesse um reajuste de 20%  
 */
@@ -50,4 +50,13 @@ SELECT
     GENERO, 
     ROUND(CAST(SALARIO AS FLOAT) * 0.2, 2) AS [VALOR DE REAJUSTE]
 FROM BUSINESS;
+
+/* 
+Precisamos fazer um levantamento de funcionários que 
+recebem mais doque R$ 
+*/
+SELECT NOME, SOBRENOME, EMAIL, SALARIO
+FROM BUSINESS
+WHERE SALARIO >= 5000
+GO
 
