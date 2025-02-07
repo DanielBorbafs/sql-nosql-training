@@ -1,0 +1,62 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table clientes {
+  cliente_id integer [pk]
+  nome varchar(100) [not null]
+  email varchar(100) [not null, unique]
+  telefone varchar(12) [not null]
+  uf char(2) [not null]
+  genero char(1) [not null]
+  data_nascimento date [not null]
+  data_cadastro date [not null]
+}
+
+Table produtos {
+  produto_id integer [pk]
+  nome varchar(100) [not null]
+  descricao text
+  preco decimal(10, 2) [not null]
+  qtd_estoque integer [not null]
+  categoria_id integer [not null]
+}
+
+Table categorias {
+  categoria_id integer [pk]
+  nome varchar(20) [not null]
+}
+
+Table vendas {
+  vendas_id integer [pk]
+  cliente_id integer [not null]
+  data_venda date [not null]
+  valor_total decimal(10, 2) [not null]
+}
+
+Table itens_vendas {
+  item_id integer [pk]
+  venda_id integer [not null]
+  produto_id integer [not null]
+  quantidade integer [not null]
+  preco_unitario decimal(10, 2) [not null]
+}
+
+Table campanhas {
+  campanhas_id integer [pk]
+  nome_campanha varchar(100) [not null]
+  categoria_desconto integer [not null]
+  porcentagem_desconto decimal(5, 2) [not null]
+  data_inicio date [not null]
+  data_fim date [not null]
+}
+
+// Relacionamentos
+Ref: produtos.categoria_id > categorias.categoria_id
+
+Ref: categorias.categoria_id < campanhas.categoria_desconto
+
+Ref: clientes.cliente_id < vendas.cliente_id
+
+Ref: vendas.vendas_id < itens_vendas.venda_id
+
+Ref: produtos.produto_id < itens_vendas.produto_id
