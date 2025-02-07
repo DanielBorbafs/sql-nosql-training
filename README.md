@@ -49,7 +49,3 @@
 
 <hr>
 
-<h2>📄 LICENÇA</h2>
-<p>
-  Este repositório está sob a licença MIT. Veja o arquivo LICENSE para mais informações.
-</p>
