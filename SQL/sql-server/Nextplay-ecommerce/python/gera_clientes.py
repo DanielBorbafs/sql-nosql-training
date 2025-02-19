@@ -10,10 +10,10 @@ sys.stdout.reconfigure(encoding='utf-8')
 fake = Faker('pt_BR')
 
 # Configurar conexão com SQL Server
-server =
-database =
-username = 
-password = 
+server =''
+database =''
+username =''
+password = ''
 
 try:
     # Conectar ao banco
