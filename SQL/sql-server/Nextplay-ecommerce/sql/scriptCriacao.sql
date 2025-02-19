@@ -5,7 +5,7 @@ USE NEXTPLAY
 GO
 
 CREATE TABLE clientes (
-    cliente_id INT PRIMARY KEY,
+    cliente_id INT PRIMARY KEY IDENTITY(1,1),
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     telefone VARCHAR(12) UNIQUE NOT NULL,
