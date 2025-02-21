@@ -31,7 +31,7 @@ CREATE TABLE produtos (
 );
 
 CREATE TABLE vendas (
-    vendas_id INT PRIMARY KEY IDENTITY(1,1),
+    vendas_id INT PRIMARY KEY,
     cliente_id INT NOT NULL,
     data_venda DATE NOT NULL,
     valor_total DECIMAL(10, 2) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE vendas (
 );
 
 CREATE TABLE itens_vendas (
-    item_id INT PRIMARY KEY IDENTITY(1,1),
+    item_id INT PRIMARY KEY,
     venda_id INT NOT NULL,
     produto_id INT NOT NULL,
     quantidade INT NOT NULL,

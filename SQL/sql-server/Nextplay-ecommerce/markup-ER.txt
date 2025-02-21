@@ -41,19 +41,12 @@ Table itens_vendas {
   preco_unitario decimal(10, 2) [not null]
 }
 
-Table campanhas {
-  campanhas_id integer [pk]
-  nome_campanha varchar(100) [not null]
-  categoria_desconto integer [not null]
-  porcentagem_desconto decimal(5, 2) [not null]
-  data_inicio date [not null]
-  data_fim date [not null]
-}
+
 
 // Relacionamentos
 Ref: produtos.categoria_id > categorias.categoria_id
 
-Ref: categorias.categoria_id < campanhas.categoria_desconto
+
 
 Ref: clientes.cliente_id < vendas.cliente_id
 
