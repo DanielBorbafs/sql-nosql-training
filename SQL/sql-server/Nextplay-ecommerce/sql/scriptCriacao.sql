@@ -48,12 +48,3 @@ CREATE TABLE itens_vendas (
     CONSTRAINT fk_itens_vendas_produtos FOREIGN KEY (produto_id) REFERENCES produtos(produto_id)
 );
 
-CREATE TABLE campanhas (
-    campanhas_id INT PRIMARY KEY,
-    nome_campanha VARCHAR(100) NOT NULL,
-    categoria_desconto INT NOT NULL,
-    porcentagem_desconto DECIMAL(5, 2) NOT NULL,
-    data_inicio DATE NOT NULL,
-    data_fim DATE NOT NULL,
-    CONSTRAINT fk_campanhas_categorias FOREIGN KEY (categoria_desconto) REFERENCES categorias(categoria_id)
-);
